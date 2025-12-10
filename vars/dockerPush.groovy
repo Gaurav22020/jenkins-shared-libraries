@@ -1,4 +1,5 @@
 def call(String projectname, String tagname,String dockerusername){
+   echo 'Push Code'
    withCredentials([
                     usernamePassword(
                         credentialsId: 'docker-hub-cred',
@@ -12,4 +13,5 @@ def call(String projectname, String tagname,String dockerusername){
                     sh "docker push ${dockerusername}/
     ${projectname}:${taganme}"
                 }
+    echo"pushed code"
 }
